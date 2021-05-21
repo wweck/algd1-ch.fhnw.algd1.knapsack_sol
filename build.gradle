@@ -1,0 +1,59 @@
+plugins {
+	id 'java'
+	id 'idea'
+	id 'application'
+}
+
+sourceCompatibility = 14
+targetCompatibility = 14
+compileJava.options.encoding = 'UTF-8'
+
+mainClassName = 'ch.fhnw.algd1.knapsack.KnapsackSolution'
+
+task runSolution(type: JavaExec) {
+	group = 'application'
+	description = 'run solution'
+
+	classpath = sourceSets.main.runtimeClasspath
+	main = 'ch.fhnw.algd1.knapsack.KnapsackSolution'
+}
+
+task runSolutionWithItemList(type: JavaExec) {
+	group = 'application'
+	description = 'run solution that also computes an item list'
+
+	classpath = sourceSets.main.runtimeClasspath
+	main = 'ch.fhnw.algd1.knapsack.Knapsack2ItemList'
+}
+
+task runSolutionWithBranchAndBound(type: JavaExec) {
+	group = 'application'
+	description = 'run branch and bound solution'
+
+	classpath = sourceSets.main.runtimeClasspath
+	main = 'ch.fhnw.algd1.knapsack.Knapsack3BranchAndBound'
+}
+
+task runSolutionAllowingItemsMultipleTimes(type: JavaExec) {
+	group = 'application'
+	description = 'run branch and bound solution allowing to pack items in multiples'
+
+	classpath = sourceSets.main.runtimeClasspath
+	main = 'ch.fhnw.algd1.knapsack.Knapsack4MultipleItems'
+}
+
+task runSolutionInFunctionalStyle(type: JavaExec) {
+	group = 'application'
+	description = 'run branch and bound solution programmed in a functional style'
+
+	classpath = sourceSets.main.runtimeClasspath
+	main = 'ch.fhnw.algd1.knapsack.KnapsackFunctional'
+}
+
+task runSolutionInObjectorientedStyle(type: JavaExec) {
+	group = 'application'
+	description = 'run branch and bound solution programmed in an object-oriented style'
+
+	classpath = sourceSets.main.runtimeClasspath
+	main = 'ch.fhnw.algd1.knapsack.KnapsackObjectoriented'
+}
